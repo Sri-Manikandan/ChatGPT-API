@@ -14,7 +14,9 @@ with st.form("my_form"):
             model="gpt-3.5-turbo",
             messages=[
                 {"role": "user", "content": title}
-            ]
+            ],
+            temperature=0.5,
+            max_tokens=100,
         )
         st.write("The answer to your question is:")
         st.write(response["choices"][0]["message"]["content"])
